@@ -3,7 +3,7 @@
 import pandas as pd
 
 df = pd.read_csv('money.csv', encoding = 'gbk')
-print(df[:3])
+#print(df[:3])
 
 #数据处理
 import matplotlib.pyplot as plt
@@ -81,7 +81,7 @@ for time in df['Time']:
 #将原始数据转换为时间按月的数据
 df_month = df
 df_month['Time'] = Time
-print(df_month[:3])
+#print(df_month[:3])
 #按月份分组，计算每个月的纯收入
 grouped = df_month['Amount'].groupby(df_month['Time'])
 result = grouped.sum()
@@ -102,7 +102,7 @@ for time in df_month['Time']:
 #将原始数据转换为时间按年的数据
 df_year = df
 df_year['Time'] = Time
-print(df_year[:3])
+#print(df_year[:3])
 #按月份分组，计算每年的纯收入
 grouped = df_year['Amount'].groupby(df_year['Time'])
 result = grouped.sum()
@@ -111,4 +111,24 @@ num = []
 for d in result:
     num.append(d)
 plt.plot(num)
+plt.show()
+
+#分离出收入和支出，收入>0，支出<0
+df_year_income = df_year[df_year['Amount'] > 0]
+df_year_outcome = df_year[df_year['Amount'] < 0]
+incomeGroup = df_year_income.groupby(df_year_income['Time'])
+outcomeGroup = df_year_outcome.groupby(df_year_outcome['Time'])
+incomeSum = incomeGroup.sum()
+outcomeSum = outcomeGroup.sum()
+
+num = []
+for d in incomeSum['Amount']:
+    num.append(d)
+plt.plot(num)
+
+num = []
+for d in outcomeSum['Amount']:
+    num.append(abs(d))
+plt.plot(num)
+
 plt.show()
