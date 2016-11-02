@@ -52,3 +52,63 @@ plt.plot(accumuIncome)
 plt.plot(accumuOutcome)
 plt.plot(sub)
 plt.show()
+
+#将数据按类型分组
+grouped = df['Amount'].groupby(df['TypeName'])
+result = abs(grouped.sum())
+num = []
+for d in result:
+    num.append(d)
+
+# import pylab as pl
+# pl.hist(num, bins = 1)
+# pl.show()
+
+plt.plot(num)
+plt.show()
+
+#print(df.dtypes)
+
+#按月分组
+i = 0
+Time = []
+for time in df['Time']:
+    #df['time'][0].values = int(time)
+    #print(int(time))
+    Time.append(int(time/100))
+    i += 1
+
+#将原始数据转换为时间按月的数据
+df_month = df
+df_month['Time'] = Time
+print(df_month[:3])
+#按月份分组，计算每个月的纯收入
+grouped = df_month['Amount'].groupby(df_month['Time'])
+result = grouped.sum()
+#print(result)
+num = []
+for d in result:
+    num.append(d)
+plt.plot(num)
+plt.show()
+
+#按年分组
+i = 0
+Time = []
+for time in df_month['Time']:
+    Time.append(int(time/100))
+    i += 1
+
+#将原始数据转换为时间按年的数据
+df_year = df
+df_year['Time'] = Time
+print(df_year[:3])
+#按月份分组，计算每年的纯收入
+grouped = df_year['Amount'].groupby(df_year['Time'])
+result = grouped.sum()
+# print(result)
+num = []
+for d in result:
+    num.append(d)
+plt.plot(num)
+plt.show()
