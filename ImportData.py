@@ -8,7 +8,7 @@ con.text_factory = lambda x:str(x, 'gb2312')
 #取得游标
 cu = con.cursor()
 #查询
-cu.execute("select ID, Time, Name, Amount, TypeName from Income, IncomeType where IncomeType.TypeID == Income.TypeID")
+cu.execute("select Time, Name, Amount, TypeName from Income, IncomeType where IncomeType.TypeID == Income.TypeID")
 #获取结果
 data = cu.fetchall()
 #关闭数据库
@@ -25,7 +25,7 @@ import csv
 with open("money.csv", "w") as csvfile:
     writer = csv.writer(csvfile)
     item = []
-    for i in range(5):
+    for i in range(4):
         item.append(cu.description[i][0])
     writer.writerow(item)
     writer.writerows(data)

@@ -20,11 +20,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ImportData.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ImportData.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ImportData.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-75">
-              <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+            <state relative-caret-position="9">
+              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dataAnalyse.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dataAnalyse.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="121">
+              <caret line="46" column="9" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -43,12 +53,13 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/ImportData.py" />
+        <option value="$PROJECT_DIR$/dataAnalyse.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="484" />
-    <option name="y" value="9" />
+    <option name="x" value="511" />
+    <option name="y" value="59" />
     <option name="width" value="1400" />
     <option name="height" value="652" />
   </component>
@@ -106,7 +117,7 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="last_opened_file_path" value="C:/Anaconda3/python.exe" />
   </component>
-  <component name="RunManager" selected="Python.ImportData">
+  <component name="RunManager" selected="Python.dataAnalyse">
     <configuration default="false" name="ImportData" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -120,6 +131,23 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="IncomeData" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ImportData.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="dataAnalyse" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="IncomeData" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dataAnalyse.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -258,12 +286,14 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <list size="1">
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Python.ImportData" />
+      <item index="1" class="java.lang.String" itemvalue="Python.dataAnalyse" />
     </list>
     <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Python.ImportData" />
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="Python.dataAnalyse" />
+        <item index="1" class="java.lang.String" itemvalue="Python.ImportData" />
       </list>
     </recent_temporary>
   </component>
@@ -281,7 +311,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="484" y="9" width="1400" height="652" extended-state="0" />
+    <frame x="511" y="59" width="1400" height="652" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -321,8 +351,16 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/ImportData.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-75">
-          <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+        <state relative-caret-position="9">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataAnalyse.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="46" column="9" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="9" />
           <folding />
         </state>
       </provider>
