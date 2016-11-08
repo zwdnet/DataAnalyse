@@ -1,6 +1,7 @@
 # -*- coding:utf-8 -*-
 # 读入csv文件，进行数据分析
 import pandas as pd
+import numpy as np
 
 df = pd.read_csv('money.csv', encoding='gbk')
 # print(df[:3])
@@ -100,17 +101,81 @@ outcomeGroup = df_month_outcome.groupby(df_month_outcome['Time'])
 incomeSum = incomeGroup.sum()
 outcomeSum = outcomeGroup.sum()
 
-num = []
+num1 = []
 for d in incomeSum['Amount']:
-    num.append(d)
-plt.plot(num)
+    num1.append(d)
+plt.plot(num1)
 
-num = []
+num2 = []
 for d in outcomeSum['Amount']:
-    num.append(abs(d))
-plt.plot(num)
+    num2.append(abs(d))
+plt.plot(num2)
 
 plt.show()
+
+
+# 根据收入支出数据做数据拟合,先做多项式拟合
+# 先做数据初始化
+def initData(values):
+    i = 0
+    x = []
+    y = []
+    for val in values:
+        x.append(i)
+        y.append(val)
+        i += 1
+    return x, y
+# 拟合收入
+x, y = initData(num1)
+z1 = np.polyfit(x, y, 1)
+p1 = np.poly1d(z1)
+print(p1)
+yvals = p1(x)
+plot1 = plt.plot(x, y, "*")
+plot2 = plt.plot(x, yvals)
+plt.show()
+
+# 拟合支出
+x, y = initData(num2)
+z2 = np.polyfit(x, y, 1)
+p2 = np.poly1d(z2)
+print(p2)
+yvals = p2(x)
+plot1 = plt.plot(x, y, "*")
+plot2 = plt.plot(x, yvals)
+plt.show()
+
+# 非线性拟合
+# from scipy.optimize import leastsq
+# x, y = initData(num1)
+# p0 = [1, 1]
+#
+#
+# def hyperbola_residuals(p, y, x):
+#     return y - x / (p[0]*x+ p[1])
+#
+#
+# def exponet_residuals(p, y, x):
+#     return y - p[0]*np.exp(p[1]/x)
+#
+#
+# hyper_plsq = leastsq(hyperbola_residuals, p0, args=(np.reciprocal(y), np.reciprocal(x)))
+# exp_plsq = leastsq(exponet_residuals, p0, args=(y, x))
+#
+#
+# def hyper_value(x, p):
+#     return x / (p[0]*x+p[1])
+#
+#
+# def exp_value(x, p):
+#     return p[0]*np.exp(p[1]/x)
+#
+#
+# plot1 = plt.plot(x, y, "*")
+# plot2 = plt.plot(x, hyper_value(x, hyper_plsq[0]), 'gv--')
+# plot3 = plt.plot(x, exp_value(x, exp_plsq[0]))
+# plt.legend()
+# plt.show()
 
 # 按年分组
 i = 0
